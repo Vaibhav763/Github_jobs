@@ -1,10 +1,10 @@
 
 import './App.css';
-import Fetch from './Fetch'
+import Portal from './Portal'
 
 function App() {
   return (
-   <Fetch />
+   <Portal />
   );
 }
 

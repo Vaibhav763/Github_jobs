@@ -1,6 +1,6 @@
-import React, {useEffect, useState} from 'react';
-import Portal from './Portal'
-const Fetch = () => {
+import {useEffect, useState} from 'react';
+
+const useFetch = (page) => {
 
     const[Data ,setData] = useState();
     useEffect(() => {
@@ -17,14 +17,9 @@ const Fetch = () => {
 
         Fetchdata();
      
-    }, [])
+    }, [page])
 
-    return ( 
-        <>
-        <h1>Hello</h1>
-        <Portal data={Data}/>
-        </>
-     );
+    return Data;
 }
  
-export default Fetch;
+export default useFetch;

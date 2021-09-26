@@ -5,8 +5,6 @@ const Job = ({job}) => {
   const [isOpen, setIsOpen] = useState(false);
   const toggle = () => setIsOpen(!isOpen);
 
-    console.log(job.contents);
-
     return ( 
         
     <Card className="mb-3">
