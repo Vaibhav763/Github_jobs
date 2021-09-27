@@ -1,7 +1,7 @@
 import React,{useState} from 'react'
 import { Card, Button, Collapse } from 'react-bootstrap'
 
-const Job = ({job}) => {
+const JobCard = ({job}) => {
   const [isOpen, setIsOpen] = useState(false);
   const toggle = () => setIsOpen(!isOpen);
 
@@ -15,10 +15,17 @@ const Job = ({job}) => {
               {job.name} - <span className="text-muted font-weight-light">{job.company.name}</span>
             </Card.Title>
             <Card.Subtitle className="text-muted mb-2">
+             {job.locations[0] && job.locations[0].name}
+            </Card.Subtitle>
+            <Card.Subtitle className="text-muted mb-2">
+             Post : {job.levels[0] && job.levels[0].name}
+            </Card.Subtitle>
+           
+           </div> 
+           <Card.Subtitle className="text-muted mb-2">
               {new Date(job.publication_date).toLocaleDateString()}
             </Card.Subtitle>
-           </div> 
-          <Button href={job.refs.landing_page} variant="secondary" size="lg">
+          <Button href={job.refs.landing_page} variant="secondary" >
               Link
           </Button>
         </div>
@@ -39,4 +46,4 @@ const Job = ({job}) => {
      );
 }
  
-export default Job;
+export default JobCard;
