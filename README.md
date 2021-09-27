@@ -1,2 +1,2 @@
-# Github_jobs
-React based Application for fetching Github Jobs
+# Job_Portal
+React based Application for fetching Jobs
