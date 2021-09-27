@@ -3,12 +3,7 @@ import { GrGithub } from "react-icons/gr";
 import {WiDaySunny ,WiMoonWaningCrescent3} from "react-icons/wi";
 
 const Header = () => {
-  
-  // const chk = document.getElementById('chk');
-
-  //   chk.addEventListener('change', () => {
-  //     document.body.classList.toggle('dark');
-  //   });
+ 
     return (
      <nav className='navbar'>
       <div className='navbar__main'>
