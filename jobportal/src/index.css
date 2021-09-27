@@ -35,6 +35,7 @@
   line-height: 1.5rem;
   color: #ffffff;
   font-weight: 400;
+  margin: 0 10px;
 }
 
 /* navbar */
@@ -50,7 +51,7 @@
 .navbar__main {
   display: flex;
   max-width: 1200px;
-  margin: 5px 20px;
+  margin: 5px 5px;
   justify-content: space-between;
   align-items: center;
   color: #eebbc3;
@@ -66,15 +67,16 @@
 
 .icon {
   color: #ffffff;
-  display: inline;
+  display: flex;
   background-color: #091c34;
   font-size: 2.5rem;
   cursor: pointer;
-  margin: 0 10px 0 900px;
+  margin: 0 0px 0 700px;
 }
 
 .icon a {
   background-color: #091c34;
+  margin: 0 13px;
 }
 
 .icon svg {
@@ -107,9 +109,11 @@
   .heading {
     padding: 0 20px 50px 90px;
   }
-
+  .icon a {
+    margin: 0 10px;
+  }
   .icon {
-    margin: 0 10px 0 300px;
+    margin: 0 0px 0 240px;
   }
 }
 
@@ -120,7 +124,14 @@
   }
 
   .icon {
-    margin: 0 10px 0 110px;
+    margin: 0 0 0 20px;
+  }
+
+  .navbar__main {
+    margin: 5px 5px;
+  }
+  .icon a {
+    margin: 0 10px;
   }
 }
 
@@ -129,4 +140,52 @@
 .pag span {
   color: #000000;
   background-color: #ffffff;
+}
+
+.active {
+  background-color: #eebbc3;
+}
+
+/* for dark-light */
+
+body {
+  background-color: #fafafa;
+  transition: background 0.2s linear;
+}
+
+body.dark {
+  background: #292c35;
+}
+
+.checkbox {
+  opacity: 0;
+}
+
+.label {
+  background-color: #ffffff;
+  border-radius: 50px;
+  cursor: pointer;
+  align-items: center;
+  justify-content: space-between;
+  padding: 5px;
+  position: relative;
+  height: 26px;
+  width: 50px;
+  transform: scale(1.5);
+}
+
+.label .ball {
+  background-color: #eebbc3;
+  border-radius: 50%;
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  height: 22px;
+  width: 22px;
+  transform: translateX(0px);
+  transition: transform 0.2s linear;
+}
+
+.checkbox:checked + .label .ball {
+  transform: translateX(24px);
 }

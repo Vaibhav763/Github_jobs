@@ -38,7 +38,7 @@ const Portal = () => {
         { isPending && <div> <h1>Fetching the Jobs</h1></div> }
 
         { data && <SearchForm data={data} onTypeChange={handleTypeChange} onLevelChange={handleLevelChange} /> }
-        { data && <JobsPagination page={page} setPage={setPage} hasNextPage={data && data.page_count} /> }
+        { data && <JobsPagination page={page} setPage={setPage} hasNextPage={ data.page_count} /> }
 
         {data && data.results.map(job => {
             return <JobCard key={job.id} job={job} />

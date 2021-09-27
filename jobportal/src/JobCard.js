@@ -1,6 +1,5 @@
 import React,{useState} from 'react'
 import { Card, Button, Collapse } from 'react-bootstrap'
-// import JobDetails from './JobDetails';
 
 const JobCard = ({job}) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -33,14 +32,17 @@ const JobCard = ({job}) => {
           </div>
         </div>
 
-        <Card.Text>
-          <Button
+        <Card.Text >
+          <Button className="mb-3"
              onClick={toggle} variant="primary">
              {isOpen ? 'Hide Details' : 'View Details'}
          </Button>   
          <Collapse in={isOpen}>
-         <div>{job.contents}</div>
-          {/* {isOpen==true && <JobDetails job={job}/>} */}
+         <div
+         dangerouslySetInnerHTML={{
+              __html: job.contents
+          }}></div>
+         
         </Collapse> 
         </Card.Text> 
          
