@@ -1,7 +1,7 @@
 
 import './App.css';
-import Portal from './Portal'
-import Header from './Header'
+import Portal from './components/Portal'
+import Header from './components/Header'
 
 function App() {
   return (
