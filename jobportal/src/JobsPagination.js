@@ -8,7 +8,7 @@ const JobsPagination = ({ page, setPage, hasNextPage }) => {
      }
 
   return ( 
-    <Pagination>
+    <Pagination className="mb-4 pag">
         {page !== 1 && <Pagination.Prev onClick={() => adjustPage(-1)} />}
         {page !== 1 && <Pagination.Item onClick={() => setPage(1)}>1</Pagination.Item>}
         {page > 2 && <Pagination.Ellipsis />}

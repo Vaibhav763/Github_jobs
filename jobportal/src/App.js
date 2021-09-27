@@ -1,10 +1,15 @@
 
 import './App.css';
 import Portal from './Portal'
+import Header from './Header'
 
 function App() {
   return (
-   <Portal />
+    <div>
+      <Header /> 
+      <Portal />
+    </div>
+   
   );
 }
 

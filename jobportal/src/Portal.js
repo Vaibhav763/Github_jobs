@@ -31,8 +31,8 @@ const Portal = () => {
     + '&page=' + page)
 
     return (  
-     <Container className="my-4">
-        <h1 className="mb-4">Jobs Portal</h1>
+     <Container className="basic">
+        <h1 className="heading">Jobs Portal</h1>
 
         { error && <div> <h1>{ error } </h1></div> }
         { isPending && <div> <h1>Fetching the Jobs</h1></div> }

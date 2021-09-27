@@ -6,8 +6,8 @@ const SearchForm = ({ data, onTypeChange , onLevelChange }) => {
   return (
     <Form className="mb-4">
       <Form.Row className="align-items-end">
-      <Form.Group as={Col}>
-        <Form.Label htmlFor="role">Job Industry</Form.Label>
+      <Form.Group as={Col} className="mb-3">
+        <Form.Label htmlFor="role" className="detail">Job Industry</Form.Label>
         <Input type="select" name="select" id="role" onChange={onTypeChange} value={data && data.categories}  >
         <option>Enter Your Industry</option>
         <option>IT</option>
@@ -22,7 +22,7 @@ const SearchForm = ({ data, onTypeChange , onLevelChange }) => {
 
       
       <Form.Group as={Col} >
-       <Form.Label htmlFor="level">Job Level</Form.Label>
+       <Form.Label htmlFor="level" className="detail">Job Level</Form.Label>
         <Input type="select" name="select" id="level" onChange={onLevelChange} value={data && data.levels}  >
 
           <option>Enter Degisnation</option>
