@@ -1,28 +1,41 @@
-import React from 'react'
-import { Form, Col} from 'react-bootstrap'
+import React from 'react';
+import {Input} from 'reactstrap';
+import {Form, Col} from 'react-bootstrap'
 
-const SearchForm = ({ data, onTypeChange }) => {
-  return ( 
-
-  <Form className="mb-4">
-    <Form.Row className="align-items-end">
-
+const SearchForm = ({ data, onTypeChange , onLevelChange }) => {
+  return (
+    <Form className="mb-4">
+      <Form.Row className="align-items-end">
       <Form.Group as={Col}>
-        <Form.Label>Description</Form.Label>
-        <Form.Control onChange={onTypeChange} value={data && data.categories} name="description" type="text" />
+        <Form.Label htmlFor="role">Job Industry</Form.Label>
+        <Input type="select" name="select" id="role" onChange={onTypeChange} value={data && data.categories}  >
+        <option>Enter Your Industry</option>
+        <option>IT</option>
+        <option>Accounting</option>
+        <option>Law</option>
+        <option>Education</option>
+        <option>Software Engineer</option>
+        <option>HR</option>
+        <option>Marketing</option>
+        </Input>
       </Form.Group>
 
-     <Form.Group as={Col}>
-       <Form.Label for="level">Post Level</Form.Label>
-        <Form.Control onChange={onTypeChange} value={data && data.levels} name="postlevel" type="text" id="level" /> 
-      </Form.Group> 
       
+      <Form.Group as={Col} >
+       <Form.Label htmlFor="level">Job Level</Form.Label>
+        <Input type="select" name="select" id="level" onChange={onLevelChange} value={data && data.levels}  >
 
-    </Form.Row>
-  </Form>
-
-   );
+          <option>Enter Degisnation</option>
+          <option>Entry Level</option>
+          <option>Mid Level</option>
+          <option>Senior Level</option>
+          <option>Internship</option>
+         
+        </Input>
+      </Form.Group>
+     </Form.Row>
+    </Form>
+  );
 }
- 
-export default SearchForm;
 
+export default SearchForm;

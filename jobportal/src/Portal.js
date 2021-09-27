@@ -11,36 +11,40 @@ const Portal = () => {
     const [type, setType] = useState('Software%20Engineer');
     const [level, setLevel] = useState({});
     const [page, setPage] = useState(1);
-    
-
-    const { error, isPending, data} = useFetch('https://www.themuse.com/api/public/jobs?category='+ type
-    + '&level=' + level + '%2C%20India'                                       
-    + '&page=' + page)
    
     function handleTypeChange(e) {
-        console.log(e);
-       
         const value = e.target.value
-        setPage(1)
+        console.log(value)
         setType(value)
-        
-        }
+        setPage(1)   
+    }
+
+    function handleLevelChange(e) {
+            const value = e.target.value
+            console.log(value)
+            setLevel(value)
+            setPage(1)  
+    }
+
+    const { error, isPending, data} = useFetch('https://www.themuse.com/api/public/jobs?category='+ type
+    + '&level=' + level                                     
+    + '&page=' + page)
 
     return (  
      <Container className="my-4">
         <h1 className="mb-4">Jobs Portal</h1>
 
         { error && <div> <h1>{ error } </h1></div> }
-        { isPending && <div> <h1>Loading...</h1></div> }
+        { isPending && <div> <h1>Fetching the Jobs</h1></div> }
 
-        <SearchForm data={data} onTypeChange={handleTypeChange} /> 
-        <JobsPagination page={page} setPage={setPage} hasNextPage={data && data.page_count} /> 
+        { data && <SearchForm data={data} onTypeChange={handleTypeChange} onLevelChange={handleLevelChange} /> }
+        { data && <JobsPagination page={page} setPage={setPage} hasNextPage={data && data.page_count} /> }
 
         {data && data.results.map(job => {
             return <JobCard key={job.id} job={job} />
         })}
        
-        <JobsPagination page={page} setPage={setPage} hasNextPage={data && data.page_count} /> 
+       { data && <JobsPagination page={page} setPage={setPage} hasNextPage={data && data.page_count} /> }
     </Container>
     );
 }
