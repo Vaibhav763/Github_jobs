@@ -7,7 +7,7 @@ const Header = () => {
     return (
      <nav className='navbar'>
       <div className='navbar__main'>
-        <h1 className="navname"> Job Portal </h1>
+        <h1 className="navname"> Recruit Plus </h1>
         <div className="icon">
           
           <a href="https://github.com/Vaibhav763/Github_jobs"  ><GrGithub /> </a>
