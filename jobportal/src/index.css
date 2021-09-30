@@ -28,6 +28,14 @@
   font-family: cursive;
 }
 
+.type {
+  margin: 0 auto;
+  padding: 0px 100px 50px 120px;
+  font-size: 3rem;
+  font-weight: 400;
+  color: #eebbc3;
+  font-family: cursive;
+}
 /* form heading */
 
 .detail {
@@ -109,6 +117,10 @@
   .heading {
     padding: 0 20px 50px 90px;
   }
+
+  .type {
+    padding: 0 20px 50px 20px;
+  }
   .icon a {
     margin: 0 10px;
   }
@@ -121,6 +133,11 @@
   .heading {
     padding: 0 10px 50px 30px;
     font-size: 3rem;
+  }
+
+  .type {
+    padding: 0 20px 50px 20px;
+    font-size: 2rem;
   }
 
   .icon {
@@ -188,4 +205,23 @@ body.dark {
 
 .checkbox:checked + .label .ball {
   transform: translateX(24px);
+}
+
+.loading-container {
+  width: 400px;
+  height: 400px;
+  margin-left: 30%;
+}
+
+.canvas vanta-canvas {
+  background-color: #ffffff;
+  width: 100%;
+}
+
+@media screen and (max-width: 600px) {
+  .loading-container {
+    margin-left: 10%;
+    width: 250px;
+    height: 250px;
+  }
 }

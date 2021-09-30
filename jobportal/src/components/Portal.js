@@ -5,7 +5,9 @@ import useFetch from './useFetch';
 import JobsPagination from './JobsPagination';
 import JobCard from './JobCard';
 import SearchForm from './SearchForm';
-
+import LoadingFile from './LoadingFile';
+import Background from './Background';
+import Typewrite from './Typewrite';
 
 const Portal = () => {
     const [type, setType] = useState('Software%20Engineer');
@@ -35,8 +37,10 @@ const Portal = () => {
         <h1 className="heading">Jobs Portal</h1>
 
         { error && <div> <h1>{ error } </h1></div> }
-        { isPending && <div> <h1>Fetching the Jobs</h1></div> }
-
+        { isPending && <div> <LoadingFile/></div> }
+        {data && <Typewrite />}
+        {/* {data && <Background />} */}
+        
         { data && <SearchForm data={data} onTypeChange={handleTypeChange} onLevelChange={handleLevelChange} /> }
         { data && <JobsPagination page={page} setPage={setPage} hasNextPage={ data.page_count} /> }
 
