@@ -1,12 +1,13 @@
 import React,{useState} from 'react'
 import { Card, Button, Collapse } from 'react-bootstrap'
+import Fade from 'react-reveal/Fade';
 
 const JobCard = ({job}) => {
   const [isOpen, setIsOpen] = useState(false);
   const toggle = () => setIsOpen(!isOpen);
 
     return ( 
-        
+    <Fade bottom>
     <Card className="mb-4">
       <Card.Body>
       <div className="d-flex justify-content-between">
@@ -49,6 +50,7 @@ const JobCard = ({job}) => {
 
        </Card.Body>
      </Card>
+     </Fade>
      );
 }
  
