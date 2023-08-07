@@ -4,9 +4,10 @@ requirement by fetching latest jobs from Muse API.
 <h1>Features </h1>
 <h4>• Dynamic Search Bar</h4>
 <h4>• Pagination</h4>
-<h4>• Dark Light Mode Switching</h4>
+<h4>• Box hovering to make it user-friendly</h4>
+<!-- <h4>• Dark Light Mode Switching</h4> -->
 <h4>• Used Lottie Animation</h4>
-<h4>• MUSE API </h4>
+<h4>• Fetched Jobs from MUSE API </h4>
 
 <h1> Images </h1>
 <p float="left">
